@@ -14,7 +14,7 @@ var timeRemaining = 90;
 function setTime() {
     var timerInterval = setInterval(function () {
         timeRemaining--;
-        timerEl.textContent = timeRemaining;
+        timerEl.textContent = `Time: ${timeRemaining}`;
 
         if (timeRemaining === 0) {
             clearInterval(timerInterval);
