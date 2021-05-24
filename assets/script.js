@@ -1,3 +1,8 @@
+//Variables that the user will see
+var timerEl = document.getElementById('timer');
+
+//Time Remaining variable
+var timeRemaining = 90;
 //I want a welcome page
     //On the welcome page I want a start button
 
@@ -6,6 +11,18 @@
         //the page has a question
         //the page has 4 buttons that correspond to answers
         //the page has a timer in the top right corner
+function setTime() {
+    var timerInterval = setInterval(function () {
+        timeRemaining--;
+        timerEl.textContent = timeRemaining;
+
+        if (timeRemaining === 0) {
+            clearInterval(timerInterval);
+        }
+    }, 1000);
+}
+
+setTime();
             //the timer:
                 //when timer gets to zero the game stops
                 //the timer is reduced when a question is answered incorrectly - as mentioned below
