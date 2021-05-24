@@ -57,6 +57,10 @@ setTime();
             //the page reloads with a new question and answers
 
 //When the game ends:
+//When the timer ends or the questions are finished this will have to run
+function gameOver() {
+
+}
     //the user can see their score
     //the user can put in their initials
         //I will need a form element for this.
