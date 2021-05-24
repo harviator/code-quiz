@@ -22,4 +22,8 @@
 //When the game ends:
     //the user can see their score
     //the user can put in their initials
+    //after the user inputs thier initials:
+        //they see a page with high scores
+        //they can press a "go back" button and start the quiz again
+        //they can press a "Clear High Scores" button and clear the high scores
 
