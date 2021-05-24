@@ -11,6 +11,8 @@ var questionEl = document.getElementById('question');
 var listEl = document.querySelector('ol');
 var liEl = document.querySelectorAll('il');
 //Form Elements
+//p Element to display final score
+var finalScoreEl = document.getElementById('final-score');
 //Input Element for Initials
 var initialsInput = document.getElementById('initials');
 //Submit Button
@@ -49,6 +51,7 @@ function setTime() {
         } else {
             clearInterval(timerInterval);
             timerEl.textContent = ``;
+            gameOver();
         }
     }, 1000);
 }
@@ -69,14 +72,18 @@ setTime();
 
 //When the game ends:
 //When the timer ends or the questions are finished this will have to run
+function gameOver() {
+    finalScoreEl.textContent = `Your final score is ${score}.`;
+    //code for revealing the form
+    //get user input and store in local storage
+    sumbitEl.addEventListener("click", highScore);//run the function for displaying the high scores
+}
 
 //Function for when the user submits their initials
 function highScore(event) {
     event.preventDefault();
 }
-    //the user can see their score
-    //the user can put in their initials
-        //I will need a form element for this.
+
     //after the user inputs thier initials:
         //they see a page with high scores
         //they can press a "go back" button and start the quiz again
