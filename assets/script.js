@@ -65,3 +65,6 @@ setTime();
         //they can press a "go back" button and start the quiz again
         //they can press a "Clear High Scores" button and clear the high scores
 
+/* NOTES:
+-Still figuring out how to hide elements that need to be hidden
+*/
