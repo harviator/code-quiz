@@ -1,9 +1,20 @@
 //Variables that the user will see
+//Timer
 var timerEl = document.getElementById('timer');
+//Score
+var score = 0;
+//h1 Element
 var h1El = document.querySelector('h1');
+//p Element for quetsions
 var questionEl = document.getElementById('question');
+//Ordered List and items Element for answers
 var listEl = document.querySelector('ol');
 var liEl = document.querySelectorAll('il');
+//Form Elements
+//Input Element for Initials
+var initialsInput = document.getElementById('initials');
+//Submit Button
+var sumbitEl = document.getElementById('submit');
 
 
 //Time Remaining variable
@@ -58,8 +69,10 @@ setTime();
 
 //When the game ends:
 //When the timer ends or the questions are finished this will have to run
-function gameOver() {
 
+//Function for when the user submits their initials
+function highScore(event) {
+    event.preventDefault();
 }
     //the user can see their score
     //the user can put in their initials
