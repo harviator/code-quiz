@@ -7,7 +7,12 @@ var timerEl = document.getElementById('timer');
 var timeRemaining = 90;
 
 //I want a welcome page
-    //On the welcome page I want a start button
+    //I think I want the welcome page with the start button to be what initializes everything else.
+    //On the welcome page I want a start button.  When I click the start button:
+        //I want the h1 tag to hide
+        //I want the timer to start
+        //I want the p tag to show with a question
+        //I want the ordered list with the buttons to show
 h1El.textContent = `Coding Quiz Challenge`;
 
 //when the start button is pressed
