@@ -22,6 +22,15 @@ var sumbitEl = document.getElementById('submit');
 //Time Remaining variable
 var timeRemaining = 90;
 
+//Array of questions
+var questions = [
+    "Question 1?",
+    "Question 2?",
+    "Question 3?",
+    "Question 4?",
+    "Question 5?",
+]
+
 //I want a welcome page
     //I think I want the welcome page with the start button to be what initializes everything else.
     //On the welcome page I want a start button.  When I click the start button:
