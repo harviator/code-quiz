@@ -13,11 +13,12 @@ var timeRemaining = 90;
         //the page has a timer in the top right corner
 function setTime() {
     var timerInterval = setInterval(function () {
+        if (timeRemaining > 0) {
         timeRemaining--;
         timerEl.textContent = `Time: ${timeRemaining}`;
-
-        if (timeRemaining === 0) {
+        } else {
             clearInterval(timerInterval);
+            timerEl.textContent = ``;
         }
     }, 1000);
 }
