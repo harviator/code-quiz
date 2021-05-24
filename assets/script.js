@@ -1,6 +1,9 @@
 //Variables that the user will see
-var h1El = document.querySelector('h1');
 var timerEl = document.getElementById('timer');
+var h1El = document.querySelector('h1');
+var questionEl = document.getElementById('question');
+var listEl = document.querySelector('ol');
+var liEl = document.querySelectorAll('il');
 
 
 //Time Remaining variable
@@ -13,7 +16,14 @@ var timeRemaining = 90;
         //I want the timer to start
         //I want the p tag to show with a question
         //I want the ordered list with the buttons to show
-h1El.textContent = `Coding Quiz Challenge`;
+function initialize() {
+    h1El.textContent = `Coding Quiz Challenge`;
+    questionEl.textContent = `Try to answer the questions before the time runs out.  If you select the wrong answer the time will be reduced`;
+    listEl.textContent = ``;
+
+
+}
+
 
 //when the start button is pressed
     //the page is refreshed
@@ -49,6 +59,7 @@ setTime();
 //When the game ends:
     //the user can see their score
     //the user can put in their initials
+        //I will need a form element for this.
     //after the user inputs thier initials:
         //they see a page with high scores
         //they can press a "go back" button and start the quiz again
