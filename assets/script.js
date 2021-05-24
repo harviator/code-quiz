@@ -1,10 +1,14 @@
 //Variables that the user will see
+var h1El = document.querySelector('h1');
 var timerEl = document.getElementById('timer');
+
 
 //Time Remaining variable
 var timeRemaining = 90;
+
 //I want a welcome page
     //On the welcome page I want a start button
+h1El.textContent = `Coding Quiz Challenge`;
 
 //when the start button is pressed
     //the page is refreshed
