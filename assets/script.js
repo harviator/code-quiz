@@ -22,14 +22,49 @@ var sumbitEl = document.getElementById('submit');
 //Time Remaining variable
 var timeRemaining = 90;
 
-/*
+
 //Array of questions
 var questions = [
     {
-        question: "What is javascript?",
-        answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
+        question: "What is JavaScript?",
+        answers: ["A way to make coffee", "Programming Language", "HTML", "CSS"],
+        correctAnswer: 2,
+    },
+    {
+        question: "What is one of the ways comment in JavaScript?",
+        answers: ["Comment - ", "#comment", "////comment", ".comment"],
+        correctAnswer: 3,
+    },
+    {
+        question: "Which one of the following is a primitive data type in JavaScript?",
+        answers: ["Data Type", "const", "let", "String"],
+        correctAnswer: 4,
+    },
+    {
+        question: "What is one of the ways to declare a variable in JavaScript?",
+        answers: ["var", "String = ...", "VARIABLE", "NUMBER = ..."],
         correctAnswer: 1,
-        //need event listener to know what was clicked
+    },
+    {
+        question: "What is the correct way to declare and initiate a variable in the same line in JavaScript?",
+        answers: ["var a is 7;", "var a = 7;", "var a equals 7;", "var a to 7;"],
+        correctAnswer: 2,
+    },
+];
+
+function quiz() {
+    
+}
+console.log(questions[0].question)
+// var question1 = 
+
+// var question2 = 
+
+// var question3 = 
+//console.log(questions[0].question)
+
+/*
+//need event listener to know what was clicked
         //can't use event listener here evaluation: liEl.addEventListener("click", function(event) {
             var selected = event.target;
 
@@ -40,25 +75,8 @@ var questions = [
             } else {
             // time decreases by 10s... how do I do that?
             // show incorrect message below horizontal line
-            }  
-        })
-    },
-    {
-        question: "What is javascript2?",
-        answers: ["Its a coffe", "A language"]
-    },
-    {
-        question: "What is javascript3?",
-        answers: ["Its a coffe", "A language"]
-    }
-] */
-
-// var question1 = 
-
-// var question2 = 
-
-// var question3 = 
-//console.log(questions[0].question)
+            }
+*/
 
 //I want a welcome page
     //I think I want the welcome page with the start button to be what initializes everything else.
