@@ -125,10 +125,3 @@ function highScore(event) {
 /* NOTES:
 -Still figuring out how to hide elements that need to be hidden
 */
-
-/*
-if (user !== "R" && user !== "P" && user !== "S") {
-    run the code...
-} else {
-    window.alert("You ...")
-}
