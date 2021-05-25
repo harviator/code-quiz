@@ -22,6 +22,7 @@ var sumbitEl = document.getElementById('submit');
 //Time Remaining variable
 var timeRemaining = 90;
 
+/*
 //Array of questions
 var questions = [
     {
@@ -29,7 +30,7 @@ var questions = [
         answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
         correctAnswer: 1,
         //need event listener to know what was clicked
-        evaluation: liEl.addEventListener("click", function(event) {
+        //can't use event listener here evaluation: liEl.addEventListener("click", function(event) {
             var selected = event.target;
 
             //if (correctAnswer === event click answer)
@@ -50,14 +51,14 @@ var questions = [
         question: "What is javascript3?",
         answers: ["Its a coffe", "A language"]
     }
-]
+] */
 
 // var question1 = 
 
 // var question2 = 
 
 // var question3 = 
-console.log(questions[0].question)
+//console.log(questions[0].question)
 
 //I want a welcome page
     //I think I want the welcome page with the start button to be what initializes everything else.
@@ -66,6 +67,7 @@ console.log(questions[0].question)
         //I want the timer to start
         //I want the p tag to show with a question
         //I want the ordered list with the buttons to show
+/*
 function initialize() {
     h1El.textContent = `Coding Quiz Challenge`;
     questionEl.textContent = `Try to answer the questions before the time runs out.  If you select the wrong answer the time will be reduced`;
@@ -73,13 +75,14 @@ function initialize() {
 
 
 }
-
+*/
 
 //when the start button is pressed
     //the page is refreshed
         //the page has a question
         //the page has 4 buttons that correspond to answers
         //the page has a timer in the top right corner
+
 function setTime() {
     var timerInterval = setInterval(function () {
         if (timeRemaining > 0) {
@@ -128,4 +131,5 @@ function highScore(event) {
 
 /* NOTES:
 -Still figuring out how to hide elements that need to be hidden
+ to hid things look at 04-Web-API's File 20.  Having data attributes of state: hidden and content: question and changing the state content.
 */
