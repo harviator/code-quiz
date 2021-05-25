@@ -8,8 +8,13 @@ var h1El = document.querySelector('h1');
 //p Element for quetsions
 var questionEl = document.getElementById('question');
 //Ordered List and items Element for answers
-var listEl = document.querySelector('ol');
+var listEl = document.querySelector('ul');
 var liEl = document.querySelectorAll('il');
+listEl.setAttribute('style', 'list-style-type: none;');
+var ans1El = document.getElementById('ans1');
+var ans2El = document.getElementById('ans2');
+var ans3El = document.getElementById('ans3');
+var ans4El = document.getElementById('ans4');
 //Form Elements
 //p Element to display final score
 var finalScoreEl = document.getElementById('final-score');
@@ -27,35 +32,50 @@ var timeRemaining = 90;
 var questions = [
     {
         question: "What is JavaScript?",
-        answers: ["A way to make coffee", "Programming Language", "HTML", "CSS"],
-        correctAnswer: 2,
-    },
-    {
-        question: "What is one of the ways comment in JavaScript?",
-        answers: ["Comment - ", "#comment", "////comment", ".comment"],
-        correctAnswer: 3,
-    },
-    {
-        question: "Which one of the following is a primitive data type in JavaScript?",
-        answers: ["Data Type", "const", "let", "String"],
-        correctAnswer: 4,
-    },
-    {
-        question: "What is one of the ways to declare a variable in JavaScript?",
-        answers: ["var", "String = ...", "VARIABLE", "NUMBER = ..."],
+        answers: ["1. A way to make coffee", "2. Programming Language", "3. HTML", "4. CSS"],
         correctAnswer: 1,
     },
     {
-        question: "What is the correct way to declare and initiate a variable in the same line in JavaScript?",
-        answers: ["var a is 7;", "var a = 7;", "var a equals 7;", "var a to 7;"],
+        question: "What is one of the ways comment in JavaScript?",
+        answers: ["1. Comment - ", "2. #comment", "3. ////comment", "4. .comment"],
         correctAnswer: 2,
+    },
+    {
+        question: "Which one of the following is a primitive data type in JavaScript?",
+        answers: ["1. Data Type", "2. const", "3. let", "4. String"],
+        correctAnswer: 3,
+    },
+    {
+        question: "What is one of the ways to declare a variable in JavaScript?",
+        answers: ["1. var", "2. String = ...", "3. VARIABLE", "4. NUMBER = ..."],
+        correctAnswer: 0,
+    },
+    {
+        question: "What is the correct way to declare and initiate a variable in the same line in JavaScript?",
+        answers: ["1. var a is 7;", "2. var a = 7;", "3. var a equals 7;", "4. var a to 7;"],
+        correctAnswer: 1,
     },
 ];
 
 function quiz() {
+    for (i=0; i < questions.length; i++) {
+        console.log(questions[i].question);
+    }
+    
+    for (j=0; j < questions.length; j++) {
+        console.log(questions[j].answers);
+    }
+
     
 }
-console.log(questions[0].question)
+
+quiz();
+
+/*ans1El.textContent = questions[0].answers[0];
+    ans2El.textContent = questions[0].answers[1];
+    ans3El.textContent = questions[0].answers[2];
+    ans4El.textContent = questions[0].answers[3]; 
+*/
 // var question1 = 
 
 // var question2 = 
