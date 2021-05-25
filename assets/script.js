@@ -28,17 +28,19 @@ var questions = [
         question: "What is javascript?",
         answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
         correctAnswer: 1,
-        evaluation: function() {
-            //need to have an event listener for correct answer
-            //if (correctAnswer === event click answer) {
-            //  score++;
-            // show correct message below horizontal line
-            //} else {
+        //need event listener to know what was clicked
+        evaluation: liEl.addEventListener("click", function(event) {
+            var selected = event.target;
+
+            //if (correctAnswer === event click answer)
+            if (selected === 1) {
+                score++;
+                // show correct message below horizontal line
+            } else {
             // time decreases by 10s... how do I do that?
-            // show incorrect message below horizontal line    
-               
-            
-        }
+            // show incorrect message below horizontal line
+            }  
+        })
     },
     {
         question: "What is javascript2?",
