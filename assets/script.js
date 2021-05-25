@@ -57,16 +57,17 @@ var questions = [
     },
 ];
 
+var currentQuestion = 0;
+
+
 function quiz() {
     for (i=0; i < questions.length; i++) {
         console.log(questions[i].question);
-    }
     
-    for (j=0; j < questions.length; j++) {
-        console.log(questions[j].answers);
+        for (j=0; j < questions[i].answers.length; j++) {
+        console.log(questions[i].answers[j]);
+        }
     }
-
-    
 }
 
 quiz();
