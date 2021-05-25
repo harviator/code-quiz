@@ -32,8 +32,10 @@ var questions = [
             //need to have an event listener for correct answer
             //if (correctAnswer === event click answer) {
             //  score++;
+            // show correct message below horizontal line
             //} else {
-            // time decreases by 10s... how do I do that?    
+            // time decreases by 10s... how do I do that?
+            // show incorrect message below horizontal line    
                
             
         }
