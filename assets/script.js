@@ -24,12 +24,36 @@ var timeRemaining = 90;
 
 //Array of questions
 var questions = [
-    "Question 1?",
-    "Question 2?",
-    "Question 3?",
-    "Question 4?",
-    "Question 5?",
+    {
+        question: "What is javascript?",
+        answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
+        correctAnswer: 1,
+        evaluation: function() {
+            //need to have an event listener for correct answer
+            //if (correctAnswer === event click answer) {
+            //  score++;
+            //} else {
+            // time decreases by 10s... how do I do that?    
+               
+            
+        }
+    },
+    {
+        question: "What is javascript2?",
+        answers: ["Its a coffe", "A language"]
+    },
+    {
+        question: "What is javascript3?",
+        answers: ["Its a coffe", "A language"]
+    }
 ]
+
+// var question1 = 
+
+// var question2 = 
+
+// var question3 = 
+console.log(questions[0].question)
 
 //I want a welcome page
     //I think I want the welcome page with the start button to be what initializes everything else.
@@ -101,3 +125,10 @@ function highScore(event) {
 /* NOTES:
 -Still figuring out how to hide elements that need to be hidden
 */
+
+/*
+if (user !== "R" && user !== "P" && user !== "S") {
+    run the code...
+} else {
+    window.alert("You ...")
+}
