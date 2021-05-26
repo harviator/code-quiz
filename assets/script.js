@@ -68,8 +68,9 @@ var index = 0;
 function quiz() {
     
     if (questions[index] == undefined) {
-        
-        gameOver();
+        timerEl.textContent = ``;
+        timeRemaining = 0;
+        //gameOver();
     
     } else {
 
@@ -123,10 +124,6 @@ function setTime() {
         if (timeRemaining > 0) {
             timeRemaining--;
             timerEl.textContent = `Time: ${timeRemaining}`;
-        } else if (questions[index] == undefined) {
-            clearInterval(timerInterval);
-            timerEl.textContent = ``;
-            gameOver();
         } else {
             clearInterval(timerInterval);
             timerEl.textContent = ``;
@@ -135,18 +132,12 @@ function setTime() {
     }, 1000);
 }
 
-            //the timer:
-                //when timer gets to zero the game stops
-                //the timer is reduced when a question is answered incorrectly - as mentioned below
+            
         //when a answer is selected:
             //if the answer is correct:
-                //the score is incremented
-                //stored on local storage
                 //the user can see "Correct!" at the bottom of the page
             //if the answer is incorrect:
-                //the timer is reduced
                 //the user sees "Incorrect" at the bottom of the page
-            //the page reloads with a new question and answers
 
 //When the game ends:
 //When the timer ends or the questions are finished this will have to run
