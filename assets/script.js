@@ -67,13 +67,15 @@ var index = 0;
 function quiz() {
 
     questionEl.textContent = questions[index].question;
-console.log(listEl)
+
     for (j=0; j < questions[index].answers.length; j++) {
      
         var liEl=document.createElement('li')
         var ansEl = document.createElement('button')
        
         ansEl.textContent = questions[index].answers[j]
+        //Set attribute "data-number=answers[j]"
+        ansEl.setAttribute("data-number", [j]);
         ansEl.addEventListener('click',getAnswer)
         liEl.append(ansEl)
         listEl.append(liEl)
@@ -84,12 +86,14 @@ console.log(listEl)
     
 }
 
+//Event Listener for Start Quiz Button
 startEl.addEventListener('click', function() {
     setTime();
     quiz();
 });
 
-function getAnswer(){
+function getAnswer() {
+    console.log(ansEl.getAttribute('data-number'));
 
 }
 
@@ -106,8 +110,9 @@ function setTime() {
         }
     }, 1000);
 }
-//start timer with button
-//run quiz once when the timer starts
+
+
+
 //make the function for the buttons of the choices evaluate the answer and run quiz one more time with the next question and choices
 
             //the timer:
