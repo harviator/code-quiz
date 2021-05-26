@@ -66,14 +66,21 @@ var index = 0;
 
 //Runs through the quiz questions and answers
 function quiz() {
-    //clear elements first
-    listEl.innerHTML = '';
+    
+    if (questions[index] == undefined) {
+        
+        gameOver();
+    
+    } else {
 
-    //Display questions
-    questionEl.textContent = questions[index].question;
+        //clear elements first
+        listEl.innerHTML = '';
 
-    //Answer list
-    for (j=0; j < questions[index].answers.length; j++) {
+        //Display questions
+        questionEl.textContent = questions[index].question;
+
+        //Answer list
+        for (j=0; j < questions[index].answers.length; j++) {
         
         var liEl = document.createElement('li')
         var ansEl = document.createElement('button')
@@ -84,6 +91,7 @@ function quiz() {
         ansEl.addEventListener('click',getAnswer)
         liEl.append(ansEl)
         listEl.append(liEl)
+        }
     }
 }
 
@@ -95,8 +103,6 @@ startEl.addEventListener('click', function() {
 
 //Evaluates the answer, updates the score, and retrieves the next questions
 function getAnswer(event) {
-    console.log(typeof event.target.getAttribute('data-number'));
-    console.log(typeof questions[index].correctAnswer);
 
     if (event.target.getAttribute('data-number') == questions[index].correctAnswer) {
         score += 20;
@@ -115,8 +121,12 @@ function setTime() {
     var timerInterval = setInterval(function () {
        
         if (timeRemaining > 0) {
-        timeRemaining--;
-        timerEl.textContent = `Time: ${timeRemaining}`;
+            timeRemaining--;
+            timerEl.textContent = `Time: ${timeRemaining}`;
+        } else if (questions[index] == undefined) {
+            clearInterval(timerInterval);
+            timerEl.textContent = ``;
+            gameOver();
         } else {
             clearInterval(timerInterval);
             timerEl.textContent = ``;
@@ -141,10 +151,15 @@ function setTime() {
 //When the game ends:
 //When the timer ends or the questions are finished this will have to run
 function gameOver() {
+    
+    questionEl.textContent = '';
+    listEl.innerHTML = '';
+
     finalScoreEl.textContent = `Your final score is ${score}.`;
+    
     //code for revealing the form
     //get user input and store in local storage
-    sumbitEl.addEventListener("click", highScore);//run the function for displaying the high scores
+    //sumbitEl.addEventListener("click", highScore);//run the function for displaying the high scores
 }
 
 //Function for when the user submits their initials
