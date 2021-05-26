@@ -8,20 +8,21 @@ var h1El = document.querySelector('h1');
 //p Element for quetsions
 var questionEl = document.getElementById('question');
 //Ordered List and items Element for answers
-var listEl = document.querySelector('ul');
-var liEl = document.querySelectorAll('il');
-listEl.setAttribute('style', 'list-style-type: none;');
-var ans1El = document.getElementById('ans1');
-var ans2El = document.getElementById('ans2');
-var ans3El = document.getElementById('ans3');
-var ans4El = document.getElementById('ans4');
+var listEl = document.querySelector('#choices');
+
+
+
+//var ans2El = document.getElementById('ans2');
+//var ans3El = document.getElementById('ans3');
+//var ans4El = document.getElementById('ans4');
 //Form Elements
 //p Element to display final score
 var finalScoreEl = document.getElementById('final-score');
 //Input Element for Initials
 var initialsInput = document.getElementById('initials');
 //Submit Button
-var sumbitEl = document.getElementById('submit');
+var submitEl = document.getElementById('submit');
+var startEl = document.getElementById('start');
 
 
 //Time Remaining variable
@@ -57,73 +58,44 @@ var questions = [
     },
 ];
 
-var currentQuestion = 0;
 
+
+
+
+var index = 0;
 
 function quiz() {
-    for (i=0; i < questions.length; i++) {
-        console.log(questions[i].question);
-    
-        for (j=0; j < questions[i].answers.length; j++) {
-        console.log(questions[i].answers[j]);
-        }
+
+    questionEl.textContent = questions[index].question;
+console.log(listEl)
+    for (j=0; j < questions[index].answers.length; j++) {
+     
+        var liEl=document.createElement('li')
+        var ansEl = document.createElement('button')
+       
+        ansEl.textContent = questions[index].answers[j]
+        ansEl.addEventListener('click',getAnswer)
+        liEl.append(ansEl)
+        listEl.append(liEl)
+
+        
     }
+
+    
 }
 
-quiz();
+startEl.addEventListener('click', function() {
+    setTime();
+    quiz();
+});
 
-/*ans1El.textContent = questions[0].answers[0];
-    ans2El.textContent = questions[0].answers[1];
-    ans3El.textContent = questions[0].answers[2];
-    ans4El.textContent = questions[0].answers[3]; 
-*/
-// var question1 = 
-
-// var question2 = 
-
-// var question3 = 
-//console.log(questions[0].question)
-
-/*
-//need event listener to know what was clicked
-        //can't use event listener here evaluation: liEl.addEventListener("click", function(event) {
-            var selected = event.target;
-
-            //if (correctAnswer === event click answer)
-            if (selected === 1) {
-                score++;
-                // show correct message below horizontal line
-            } else {
-            // time decreases by 10s... how do I do that?
-            // show incorrect message below horizontal line
-            }
-*/
-
-//I want a welcome page
-    //I think I want the welcome page with the start button to be what initializes everything else.
-    //On the welcome page I want a start button.  When I click the start button:
-        //I want the h1 tag to hide
-        //I want the timer to start
-        //I want the p tag to show with a question
-        //I want the ordered list with the buttons to show
-/*
-function initialize() {
-    h1El.textContent = `Coding Quiz Challenge`;
-    questionEl.textContent = `Try to answer the questions before the time runs out.  If you select the wrong answer the time will be reduced`;
-    listEl.textContent = ``;
-
+function getAnswer(){
 
 }
-*/
-
-//when the start button is pressed
-    //the page is refreshed
-        //the page has a question
-        //the page has 4 buttons that correspond to answers
-        //the page has a timer in the top right corner
 
 function setTime() {
     var timerInterval = setInterval(function () {
+       
         if (timeRemaining > 0) {
         timeRemaining--;
         timerEl.textContent = `Time: ${timeRemaining}`;
@@ -134,8 +106,10 @@ function setTime() {
         }
     }, 1000);
 }
+//start timer with button
+//run quiz once when the timer starts
+//make the function for the buttons of the choices evaluate the answer and run quiz one more time with the next question and choices
 
-setTime();
             //the timer:
                 //when timer gets to zero the game stops
                 //the timer is reduced when a question is answered incorrectly - as mentioned below
