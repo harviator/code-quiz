@@ -65,12 +65,16 @@ var questions = [
 var index = 0;
 
 function quiz() {
-    //clear elements first then reappend
+    //clear elements first
+    listEl.innerHTML = '';
+
+    //Display questions
     questionEl.textContent = questions[index].question;
 
+    //Answer list
     for (j=0; j < questions[index].answers.length; j++) {
         
-        var liEl=document.createElement('li')
+        var liEl = document.createElement('li')
         var ansEl = document.createElement('button')
        
         ansEl.textContent = questions[index].answers[j]
