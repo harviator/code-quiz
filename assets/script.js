@@ -38,7 +38,7 @@ var questions = [
     },
     {
         question: "What is one of the ways comment in JavaScript?",
-        answers: ["1. Comment - ", "2. #comment", "3. ////comment", "4. .comment"],
+        answers: ["1. Comment - ", "2. #comment", "3. //comment", "4. .comment"],
         correctAnswer: 2,
     },
     {
@@ -65,11 +65,11 @@ var questions = [
 var index = 0;
 
 function quiz() {
-
+    //clear elements first then reappend
     questionEl.textContent = questions[index].question;
 
     for (j=0; j < questions[index].answers.length; j++) {
-     
+        
         var liEl=document.createElement('li')
         var ansEl = document.createElement('button')
        
@@ -92,8 +92,19 @@ startEl.addEventListener('click', function() {
     quiz();
 });
 
-function getAnswer() {
-    console.log(ansEl.getAttribute('data-number'));
+function getAnswer(event) {
+    console.log(event.target.getAttribute('data-number'));
+
+    if (event.target.getAttribute('data-number') === questions[index].correctAnswer) {
+        index++;
+        quiz();
+        score++;
+        
+    } else {
+        timeRemaining -= 15;
+        index++;
+        quiz();
+    }
 
 }
 
