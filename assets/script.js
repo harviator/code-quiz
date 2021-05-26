@@ -95,10 +95,11 @@ startEl.addEventListener('click', function() {
 
 //Evaluates the answer, updates the score, and retrieves the next questions
 function getAnswer(event) {
-    console.log(event.target.getAttribute('data-number'));
+    console.log(typeof event.target.getAttribute('data-number'));
+    console.log(typeof questions[index].correctAnswer);
 
-    if (event.target.getAttribute('data-number') === questions[index].correctAnswer) {
-        score++;
+    if (event.target.getAttribute('data-number') == questions[index].correctAnswer) {
+        score += 20;
         index++;
         quiz();
         
