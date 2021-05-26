@@ -64,6 +64,7 @@ var questions = [
 
 var index = 0;
 
+//Runs through the quiz questions and answers
 function quiz() {
     //clear elements first
     listEl.innerHTML = '';
@@ -83,11 +84,7 @@ function quiz() {
         ansEl.addEventListener('click',getAnswer)
         liEl.append(ansEl)
         listEl.append(liEl)
-
-        
     }
-
-    
 }
 
 //Event Listener for Start Quiz Button
@@ -96,22 +93,23 @@ startEl.addEventListener('click', function() {
     quiz();
 });
 
+//Evaluates the answer, updates the score, and retrieves the next questions
 function getAnswer(event) {
     console.log(event.target.getAttribute('data-number'));
 
     if (event.target.getAttribute('data-number') === questions[index].correctAnswer) {
+        score++;
         index++;
         quiz();
-        score++;
         
     } else {
         timeRemaining -= 15;
         index++;
         quiz();
     }
-
 }
 
+//Timer Function
 function setTime() {
     var timerInterval = setInterval(function () {
        
@@ -125,10 +123,6 @@ function setTime() {
         }
     }, 1000);
 }
-
-
-
-//make the function for the buttons of the choices evaluate the answer and run quiz one more time with the next question and choices
 
             //the timer:
                 //when timer gets to zero the game stops
