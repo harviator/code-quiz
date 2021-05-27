@@ -24,9 +24,13 @@ var initialsInput = document.getElementById('initials');
 var submitEl = document.getElementById('submit');
 var startEl = document.getElementById('start');
 
+var formEl = document.getElementById('myForm');
+
 
 //Time Remaining variable
 var timeRemaining = 90;
+
+var allTimeScores = JSON.parse(localStorage.getItem("allTimeScores"))  || [];
 
 
 //Array of questions
@@ -70,7 +74,6 @@ function quiz() {
     if (questions[index] == undefined) {
         timerEl.textContent = ``;
         timeRemaining = 0;
-        //gameOver();
     
     } else {
 
@@ -98,6 +101,10 @@ function quiz() {
 
 //Event Listener for Start Quiz Button
 startEl.addEventListener('click', function() {
+    
+    startEl.classList.remove("show");
+    startEl.classList.add("hide");
+
     setTime();
     quiz();
 });
@@ -142,7 +149,9 @@ function setTime() {
 //When the game ends:
 //When the timer ends or the questions are finished this will have to run
 function gameOver() {
-    
+    formEl.classList.remove("hide");
+    formEl.classList.add("show");
+
     questionEl.textContent = '';
     listEl.innerHTML = '';
 
@@ -150,12 +159,28 @@ function gameOver() {
     
     //code for revealing the form
     //get user input and store in local storage
-    //sumbitEl.addEventListener("click", highScore);//run the function for displaying the high scores
+    // sumbitEl.addEventListener("click", highScore);//run the function for displaying the high scores
+
+    formEl.addEventListener("submit", highScore)
 }
 
 //Function for when the user submits their initials
 function highScore(event) {
     event.preventDefault();
+
+    var newRecord = {
+        initials: initialsInput.value,
+        score: score
+    }
+
+    console.log(newRecord);
+
+    allTimeScores.push(newRecord);
+
+    localStorage.setItem("allTimeScores", JSON.stringify(allTimeScores))
+
+
+
 }
 
     //after the user inputs thier initials:
@@ -167,3 +192,37 @@ function highScore(event) {
 -Still figuring out how to hide elements that need to be hidden
  to hid things look at 04-Web-API's File 20.  Having data attributes of state: hidden and content: question and changing the state content.
 */
+
+// const myArray = [
+//     {
+//         color: "red",
+//         size: 1,
+//         anotherObj: {
+//             weight: 10
+//         },
+//         insideArray: ['a', 'b', 'c']
+//     },
+//     {
+//         color: "blue",
+//         size: 3,
+//         anotherObj: {
+//             weight: 13
+//         },
+//         insideArray: ['e', 'f', 'g']
+//     }
+// ];
+
+
+// for (let index = 0; index < myArray.length; index++) {
+    
+//     const insideArray = myArray[index].insideArray;
+//     // console.log(myArray[index].insideArray)
+//     for (let j = 0; j < insideArray.length; j++) {
+       
+//         console.log(myArray[index].insideArray[j])
+        
+//     }
+
+// }
+
+
