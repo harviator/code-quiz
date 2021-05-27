@@ -179,6 +179,7 @@ function highScore(event) {
 
     localStorage.setItem("allTimeScores", JSON.stringify(allTimeScores))
 
+    location.replace('scores.html');
 
 
 }
