@@ -1,10 +1,9 @@
 var clearEl = document.getElementById('clear');
-var allTimeScores = JSON.parse(localStorage.getItem("allTimeScores"))  || [];
-
-console.log(allTimeScores);
-
 var listEl = document.querySelector('#scores');
 
+var allTimeScores = JSON.parse(localStorage.getItem("allTimeScores"))  || [];
+
+//Function to display the scores
 function displayScores() {
     
     for (let index = 0; index < allTimeScores.length; index++) {
@@ -17,8 +16,6 @@ function displayScores() {
 
         nameScore.textContent = initials + " - " + score;
 
-        console.log(initials, score);
-
         listEl.append(nameScore);
 
 
@@ -27,6 +24,7 @@ function displayScores() {
 
 displayScores();
 
+//Function to clear the scores
 function clearScores() {
     localStorage.clear();
     listEl.textContent = '';

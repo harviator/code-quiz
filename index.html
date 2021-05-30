@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/style.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Space+Mono&display=swap" rel="stylesheet">
-    <title>Code Quiz</title>
-</head>
-<body>
-    <header>
-        <nav class="navbar">
-            <a href="scores.html">View All Time Scores</a>
-            <p id="timer">Time</p>
-        </nav>
-    </header>
 
-    <main>
-        <h1 class="show">Welcome To The Code Quiz</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./assets/style.css">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Space+Mono&display=swap" rel="stylesheet">
+        <title>Code Quiz</title>
+    </head>
+
+    <body>
+    
+        <header>
+            <nav class="navbar">
+                <a href="scores.html">View All Time Scores</a>
+                <p id="timer">Time</p>
+            </nav>
+        </header>
+
+        <main>
+            <h1 class="show">Welcome To The Code Quiz</h1>
         
-        <p id="question">To start the quiz click the "Start Quiz" button.  Once the start button is clicked you will have 90 seconds to finish the quiz.  You will be taken through a series of multiple choice questions.  If you select the wrong answer 15 seconds will be deducted from the timer.  The quiz ends when all the questions are finished or the timer ends.  At the end you will be able to add your initials and save your score.</p>
+            <p id="question">To start the quiz click the "Start Quiz" button.  Once the start button is clicked you will have 90 seconds to finish the quiz.  You will be taken through a series of multiple choice questions.  If you select the wrong answer 15 seconds will be deducted from the timer.  The quiz ends when all the questions are finished or the timer ends.  At the end you will be able to add your initials and save your score.</p>
         
-        <ul id="choices">
-        </ul>
+            <ul id="choices"></ul>
 
-        <button id="start" class="show">Start Quiz</button>
+            <button id="start" class="show">Start Quiz</button>
 
-        <form id="myForm" class="hide">
-            <div>
-                <h3>All Done!</h3>
-                <p id="final-score"></p>
-            </div>
-            <input name="initials" id="initials" placeholder="Enter Your Initials"/>
-            <button id="submit">Submit</button>
-        </form>
+            <form id="myForm" class="hide">
+                <div>
+                    <h3>All Done!</h3>
+                    <p id="final-score"></p>
+                </div>
+            
+                <input name="initials" id="initials" placeholder="Enter Your Initials"/>
+            
+                <button id="submit">Submit</button>
+            </form>
 
-        
+            <hr>
+        </main>
 
-        <hr>
+        <script src="./assets/script.js"></script>
 
-        <!-- <p>Correct!/Incorrect</p> -->
-    </main>
-
-    <script src="./assets/script.js"></script>
-
-</body>
+    </body>
 </html>
