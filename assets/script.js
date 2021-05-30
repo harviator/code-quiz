@@ -134,15 +134,7 @@ function setTime() {
     }, 1000);
 }
 
-            
-        //when a answer is selected:
-            //if the answer is correct:
-                //the user can see "Correct!" at the bottom of the page
-            //if the answer is incorrect:
-                //the user sees "Incorrect" at the bottom of the page
 
-//When the game ends:
-//When the timer ends or the questions are finished this will have to run
 function gameOver() {
     formEl.classList.remove("hide");
     formEl.classList.add("show");
@@ -151,10 +143,6 @@ function gameOver() {
     listEl.innerHTML = '';
 
     finalScoreEl.textContent = `Your final score is ${score}.`;
-    
-    //code for revealing the form
-    //get user input and store in local storage
-    // sumbitEl.addEventListener("click", highScore);//run the function for displaying the high scores
 
     formEl.addEventListener("submit", highScore)
 }

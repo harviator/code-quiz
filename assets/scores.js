@@ -1,3 +1,4 @@
+var clearEl = document.getElementById('clear');
 var allTimeScores = JSON.parse(localStorage.getItem("allTimeScores"))  || [];
 
 console.log(allTimeScores);
@@ -25,3 +26,10 @@ function displayScores() {
 }
 
 displayScores();
+
+function clearScores() {
+    localStorage.clear();
+    listEl.textContent = '';
+}
+
+clearEl.addEventListener('click', clearScores);

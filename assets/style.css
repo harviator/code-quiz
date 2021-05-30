@@ -14,6 +14,11 @@ p {
     padding: 20px;
 }
 
+ul {
+    list-style-type: none;
+    background-color: #c2f0c2;
+}
+
 li > button {
     color: #33cc33;
     background-color: #000000;
@@ -69,4 +74,8 @@ li > button:hover {
 #choices {
     list-style-type: none;
     text-align: left;
+}
+
+#final-score {
+    text-align: center;
 }
