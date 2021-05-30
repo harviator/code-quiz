@@ -11,12 +11,6 @@ var questionEl = document.getElementById('question');
 var listEl = document.querySelector('#choices');
 
 
-
-//var ans2El = document.getElementById('ans2');
-//var ans3El = document.getElementById('ans3');
-//var ans4El = document.getElementById('ans4');
-//Form Elements
-//p Element to display final score
 var finalScoreEl = document.getElementById('final-score');
 //Input Element for Initials
 var initialsInput = document.getElementById('initials');
@@ -63,9 +57,6 @@ var questions = [
 ];
 
 
-
-
-
 var index = 0;
 
 //Runs through the quiz questions and answers
@@ -102,6 +93,10 @@ function quiz() {
 //Event Listener for Start Quiz Button
 startEl.addEventListener('click', function() {
     
+    h1El.classList.remove("show");
+    h1El.classList.add("hide");
+
+
     startEl.classList.remove("show");
     startEl.classList.add("hide");
 
