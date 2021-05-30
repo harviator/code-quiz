@@ -9,6 +9,29 @@ h1 {
     font-family: 'Major Mono Display', monospace;
 }
 
+p {
+    text-align: justify;
+    padding: 20px;
+}
+
+li > button {
+    color: #33cc33;
+    background-color: #000000;
+    margin-top: 5px;
+    padding: 5px;
+    border: solid 1px #33cc33;
+    border-radius: 3px;
+}
+
+li > button:hover {
+    color: #000000;
+    background-color: #33cc33;
+    margin-top: 5px;
+    padding: 5px;
+    border: solid 1px #000000;
+    border-radius: 3px;
+}
+
 .navbar {
     display: flex;
     flex-direction: row;
@@ -30,12 +53,20 @@ h1 {
     border-radius: 3px;
 }
 
-
-
 .show {
     display: block;
 }
 
 .hide {
     display: none;
+}
+
+#start {
+    margin-top: 20px;
+    margin-left: 50%;
+}
+
+#choices {
+    list-style-type: none;
+    text-align: left;
 }
