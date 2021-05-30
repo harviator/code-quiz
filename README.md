@@ -37,7 +37,7 @@ THEN I can save my initials and my score
 
 ## Screen Shot
 
-![Getting Started] (./assets/images/screen-shot.png)
+![Getting Started](./assets/images/screen-shot.png)
 
 ## Link
 https://harviator.github.io/code-quiz/
