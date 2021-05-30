@@ -14,11 +14,6 @@ p {
     padding: 20px;
 }
 
-ul {
-    list-style-type: none;
-    background-color: #c2f0c2;
-}
-
 li > button {
     color: #33cc33;
     background-color: #000000;
@@ -78,4 +73,9 @@ li > button:hover {
 
 #final-score {
     text-align: center;
+}
+
+#scores {
+    list-style-type: none;
+    background-color: #c2f0c2;
 }
