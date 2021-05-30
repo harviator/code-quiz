@@ -10,7 +10,6 @@ var questionEl = document.getElementById('question');
 //Ordered List and items Element for answers
 var listEl = document.querySelector('#choices');
 
-
 var finalScoreEl = document.getElementById('final-score');
 //Input Element for Initials
 var initialsInput = document.getElementById('initials');
@@ -155,8 +154,6 @@ function highScore(event) {
         initials: initialsInput.value,
         score: score
     }
-
-    console.log(newRecord);
 
     allTimeScores.push(newRecord);
 
