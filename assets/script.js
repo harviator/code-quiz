@@ -134,7 +134,7 @@ function setTime() {
     }, 1000);
 }
 
-
+//Function for  when the game ends
 function gameOver() {
     formEl.classList.remove("hide");
     formEl.classList.add("show");
@@ -166,47 +166,3 @@ function highScore(event) {
 
 
 }
-
-    //after the user inputs thier initials:
-        //they see a page with high scores
-        //they can press a "go back" button and start the quiz again
-        //they can press a "Clear High Scores" button and clear the high scores
-
-/* NOTES:
--Still figuring out how to hide elements that need to be hidden
- to hid things look at 04-Web-API's File 20.  Having data attributes of state: hidden and content: question and changing the state content.
-*/
-
-// const myArray = [
-//     {
-//         color: "red",
-//         size: 1,
-//         anotherObj: {
-//             weight: 10
-//         },
-//         insideArray: ['a', 'b', 'c']
-//     },
-//     {
-//         color: "blue",
-//         size: 3,
-//         anotherObj: {
-//             weight: 13
-//         },
-//         insideArray: ['e', 'f', 'g']
-//     }
-// ];
-
-
-// for (let index = 0; index < myArray.length; index++) {
-    
-//     const insideArray = myArray[index].insideArray;
-//     // console.log(myArray[index].insideArray)
-//     for (let j = 0; j < insideArray.length; j++) {
-       
-//         console.log(myArray[index].insideArray[j])
-        
-//     }
-
-// }
-
-
